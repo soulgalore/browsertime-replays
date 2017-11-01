@@ -12,12 +12,12 @@ It works like this:
 ## Build
 
 ```
-docker build -t browsertime/webpagereplay .
+docker build -t soulgalore/browsertime-webpagereplay .
 ```
 
 ## Run
 You can change the latency and number of runs with LATENCY and RUNS :)
 
 ```
-docker run --cap-add=NET_ADMIN --shm-size=1g --rm -v "$(pwd)":/browsertime -e RUNS=11 -e LATENCY=100 browsertime/webpagereplay https://en.wikipedia.org/wiki/Barack_Obama
+docker run --cap-add=NET_ADMIN --shm-size=1g --rm -v "$(pwd)":/browsertime -e RUNS=11 -e LATENCY=100 soulgalore/browsertime-webpagereplay https://en.wikipedia.org/wiki/Barack_Obama
 ```
