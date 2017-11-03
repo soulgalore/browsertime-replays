@@ -1,0 +1,1 @@
+docker run --privileged --cap-add=NET_ADMIN --shm-size=1g --rm -v "$(pwd)":/browsertime browsertime/mahimahi
