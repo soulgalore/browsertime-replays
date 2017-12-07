@@ -24,8 +24,8 @@ Default browser is Chrome:
 docker run --cap-add=NET_ADMIN --shm-size=1g --rm -v "$(pwd)":/browsertime -e RUNS=11 -e LATENCY=100 soulgalore/browsertime-webpagereplay https://en.wikipedia.org/wiki/Barack_Obama
 ```
 
-Use Firefox (note that we need to skipHar until there's a new Firefox plugin for 57):
+Use Firefox:
 
 ```
-docker run --cap-add=NET_ADMIN --shm-size=1g --rm -v "$(pwd)":/browsertime -e BROWSER=firefox -e RUNS=11 -e LATENCY=100 soulgalore/browsertime-webpagereplay https://en.wikipedia.org/wiki/Barack_Obama --skipHar --firefox.acceptInsecureCerts
+docker run --cap-add=NET_ADMIN --shm-size=1g --rm -v "$(pwd)":/browsertime -e BROWSER=firefox -e RUNS=11 -e LATENCY=100 soulgalore/browsertime-webpagereplay https://en.wikipedia.org/wiki/Barack_Obama
 ```
