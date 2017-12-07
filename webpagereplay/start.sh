@@ -4,6 +4,9 @@ set -e
 google-chrome --version
 firefox --version
 
+export MOZ_LOG=timestamp,rotate:200,nsHttp:5,cache2:5,nsSocketTransport:5,nsHostResolver:5
+export MOZ_LOG_FILE=/browsertime/log.txt
+
 RUNS="${RUNS:-5}"
 LATENCY=${LATENCY:-100}
 
