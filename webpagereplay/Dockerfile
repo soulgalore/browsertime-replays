@@ -1,4 +1,4 @@
-FROM sitespeedio/browsertime:2.0.0
+FROM sitespeedio/browsertime:2.0.1-FF57
 
 # Install Go, WebPageReplay and the webpagereplay wrapper
 
