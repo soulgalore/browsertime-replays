@@ -12,12 +12,14 @@ LATENCY=${LATENCY:-100}
 
 webpagereplaywrapper record --start --path /root/go/src/github.com/catapult-project/catapult/web_page_replay_go --http 80 --https 443
 
+
 /usr/src/app/bin/browsertime.js --firefox.preference network.dns.forceResolve:127.0.0.1 -b firefox --firefox.acceptInsecureCerts -n 1 --pageCompleteCheck "return true;" --skipHar "$@"
 
-webpagereplaywrapper record --stop --path /root/go/src/github.com/catapult-project/catapult/web_page_replay_go
+webpagereplaywrapper record --stop --path /root/go/src/github.com/catapult-project/catapult/web_page_replay_go --http 80 --https 443
 
 webpagereplaywrapper replay --start --path /root/go/src/github.com/catapult-project/catapult/web_page_replay_go --http 80 --https 443
 
-/usr/src/app/bin/browsertime.js --firefox.preference network.dns.forceResolve:127.0.0.1 -n $RUNS --video --speedIndex --firefox.acceptInsecureCerts --pageCompleteCheck "return true;" --connectivity.engine throttle --connectivity.throttle.localhost --connectivity.profile custom --connectivity.latency $LATENCY --skipHar "$@"
 
-webpagereplaywrapper replay --stop --path /root/go/src/github.com/catapult-project/catapult/web_page_replay_go
+/usr/src/app/bin/browsertime.js -b firefox --firefox.preference network.dns.forceResolve:127.0.0.1 -n $RUNS --video --speedIndex --firefox.acceptInsecureCerts --pageCompleteCheck "return true;" --connectivity.engine throttle --connectivity.throttle.localhost --connectivity.profile custom --connectivity.latency $LATENCY --skipHar "$@"
+
+webpagereplaywrapper replay --stop --path /root/go/src/github.com/catapult-project/catapult/web_page_replay_go --http 80 --https 443
