@@ -34,4 +34,5 @@ fi
 webpagereplaywrapper replay --stop --path /root/go/src/github.com/catapult-project/catapult/web_page_replay_go --http 80 --https 443
 
 # Send the metrics
+#cat result/browsertime.json
 bttostatsv result/browsertime.json $GRAPHITE_KEY https://www.wikimedia.org/beacon/statsv
